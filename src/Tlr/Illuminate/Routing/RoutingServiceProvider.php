@@ -13,8 +13,6 @@ class RoutingServiceProvider extends ServiceProvider {
 	public function register()
 	{
 		$this->registerRouter();
-
-		$this->registerUrlGenerator();
 	}
 
 	/**
