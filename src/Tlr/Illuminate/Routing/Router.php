@@ -1,6 +1,6 @@
 <?php namespace Tlr\Illuminate\Routing;
 
-use Support\Routing\Route;
+use Tlr\Illuminate\Routing\Route;
 
 class Router extends \Illuminate\Routing\Router {
 
