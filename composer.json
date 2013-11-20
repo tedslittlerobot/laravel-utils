@@ -1,0 +1,25 @@
+{
+    "name": "tlr/laravel-utils",
+    "description": "A collection of classes I use across several projects",
+    "keywords": ["laravel","utils","routing"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stef Horner",
+            "email": "stef@tedslittlerobot.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.0.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Tlr": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
