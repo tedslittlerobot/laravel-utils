@@ -3,6 +3,23 @@ Laravel Utils
 
 A collection of classes that i use across a bunch of projects.
 
+### Installation
+
+###### Composer
+
+Until it's on packagist, you can install it using composer's [standard VCS feature](http://getcomposer.org/doc/05-repositories.md#vcs)
+
+```javascript
+{
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/tedslittlerobot/laravel-utils"
+		}
+	]
+}
+```
+
 #### The Router Mod
 
 This is my implementation of [this issue](https://github.com/laravel/framework/issues/2531)
