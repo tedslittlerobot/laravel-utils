@@ -9,7 +9,7 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder {
 		if ( ! is_null($value)) return $key.'="'.e( implode(' ', (array) $value) ).'"';
 	}
 
-	public function element( $element = 'span', $attributes = array(), $content = null )
+	public function element( $element = 'div', $attributes = array(), $content = null )
 	{
 		$tag = implode( ' ', array( $element, $this->attributes( $attributes ) ) );
 
