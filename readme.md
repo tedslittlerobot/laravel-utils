@@ -23,6 +23,12 @@ Until it's on packagist, you can install it using composer's [standard VCS featu
 }
 ```
 
+Once it's up on packagist, you can simply call
+
+```bash
+composer require tlr/laravel-utils "1.0.*"
+````
+
 ### Utilities
 
 ###### Illuminate Components
