@@ -11,19 +11,10 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder {
 
 	public function element( $element = 'div', $attributes = array(), $content = null )
 	{
-		$el = array( $element );
-
-		if ( $attributes )
-			$el[] = $this->attributes( $attributes );
-
-		$tag = implode( ' ', $el );
-
-		$html = "<{$tag}>";
+		$html = "<{$element}{$this->attributes( $attributes )}>";
 
 		if ( !is_null($content) )
-		{
 			$html .= "{$content}</{$element}>";
-		}
 
 		return $html;
 	}
