@@ -11,7 +11,12 @@ class HtmlBuilder extends \Illuminate\Html\HtmlBuilder {
 
 	public function element( $element = 'div', $attributes = array(), $content = null )
 	{
-		$tag = implode( ' ', array( $element, $this->attributes( $attributes ) ) );
+		$el = array( $element );
+
+		if ( $attributes )
+			$el[] = $this->attributes( $attributes );
+
+		$tag = implode( ' ', $el );
 
 		$html = "<{$tag}>";
 
