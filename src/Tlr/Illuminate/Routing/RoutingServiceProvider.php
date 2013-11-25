@@ -1,7 +1,7 @@
 <?php namespace Tlr\Illuminate\Routing;
 
 use Illuminate\Support\ServiceProvider;
-use Tlr\Illuminate\Router;
+use Tlr\Illuminate\Routing\Router;
 
 class RoutingServiceProvider extends ServiceProvider {
 
