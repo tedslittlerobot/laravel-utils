@@ -1,6 +1,6 @@
 {
     "name": "tlr/laravel-utils",
-    "description": "A collection of classes I use across several projects",
+    "description": "A collection of common classes from several projects",
     "keywords": ["laravel","utils","routing"],
     "license": "MIT",
     "authors": [
@@ -14,9 +14,6 @@
         "illuminate/support": "4.0.*"
     },
     "autoload": {
-        "classmap": [
-            "src/migrations"
-        ],
         "psr-0": {
             "Tlr": "src/"
         }
