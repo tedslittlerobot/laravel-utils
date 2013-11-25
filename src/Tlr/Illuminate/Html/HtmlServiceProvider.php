@@ -29,7 +29,7 @@ class HtmlServiceProvider extends ServiceProvider {
 	 */
 	protected function registerHtmlBuilder()
 	{
-		$this->app->bindShared('html', function($app)
+		$this->app['html'] = $this->app->share(function($app)
 		{
 			return new HtmlBuilder($app['url']);
 		});
