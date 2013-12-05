@@ -32,4 +32,14 @@ class Route extends \Illuminate\Routing\Route {
 		return $this->parsedParameters;
 	}
 
+	/**
+	 * Get the raw, unparsed parameters
+	 * @author Stef Horner       (shorner@wearearchitect.com)
+	 * @return array
+	 */
+	public function getRawParameters()
+	{
+		return $this->parameters;
+	}
+
 }
