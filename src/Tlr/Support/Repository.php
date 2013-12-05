@@ -72,7 +72,7 @@ class Repository {
 		return $this;
 	}
 
-	public function addRules( $key, $value )
+	public function addRule( $key, $value )
 	{
 		$this->rules[ $key ] = $value;
 
@@ -112,5 +112,8 @@ class Repository {
 		$this->model->save();
 	}
 
-
+	public function getErrors()
+	{
+		return $this->val->getMessageBag();
+	}
 }
