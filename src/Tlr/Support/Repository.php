@@ -79,14 +79,28 @@ class Repository {
 		return $this;
 	}
 
-	public function getFiles()
+	/**
+	 * Get the filtered input data, or a specific peice of that data
+	 * @param string $key
+	 * @param mixed  $default
+	 * @return mixed
+	 */
+	public function data( $key = null, $default = null )
 	{
-		return $this->files;
+		if ( is_null($key) )	return $this->data;
+
+		return array_get( $this->data, $key, $default );
 	}
 
-	public function getData()
+	/**
+	 * Get the files array, or a specific file
+	 * @return mixed
+	 */
+	public function file( $key = null, $default = null )
 	{
-		return $this->data;
+		if ( is_null($key) )	return $this->files;
+
+		return array_get( $this->files, $key, $default );
 	}
 
 	public function validate()
@@ -102,7 +116,7 @@ class Repository {
 
 	protected function fill()
 	{
-		$this->model->fill( $this->getData() );
+		$this->model->fill( $this->data() );
 
 		return $this;
 	}
