@@ -35,7 +35,10 @@ class Repository {
 	 */
 	protected $files = array();
 
-
+	/**
+	 * Set the data to validate
+	 * @param  array $input
+	 */
 	public function setInput( $input )
 	{
 		$this->input = $input;
@@ -43,11 +46,19 @@ class Repository {
 		return $this;
 	}
 
+	/**
+	 * Get the data to validate
+	 * @return array
+	 */
 	public function getInput()
 	{
 		return $this->input;
 	}
 
+	/**
+	 * Set the primary model that this repository is handling
+	 * @param  Eloquent $model
+	 */
 	public function setModel( Eloquent $model )
 	{
 		$this->model = $model;
@@ -55,16 +66,28 @@ class Repository {
 		return $this;
 	}
 
+	/**
+	 * Get the primary model that the repo is validating
+	 * @return Eloquent $model
+	 */
 	public function getModel()
 	{
 		return $this->model;
 	}
 
+	/**
+	 * Get the rules to validate against
+	 * @return array
+	 */
 	public function getRules()
 	{
 		return $this->rules;
 	}
 
+	/**
+	 * Set the whole rules array
+	 * @param  array $rules
+	 */
 	public function setRules( $rules )
 	{
 		$this->rules = $rules;
@@ -72,9 +95,14 @@ class Repository {
 		return $this;
 	}
 
-	public function addRule( $key, $value )
+	/**
+	 * Set a specific rule
+	 * @param  string $key
+	 * @param  mixed  $rules
+	 */
+	public function addRule( $key, $rules )
 	{
-		$this->rules[ $key ] = $value;
+		$this->rules[ $key ] = $rules;
 
 		return $this;
 	}
@@ -103,6 +131,10 @@ class Repository {
 		return array_get( $this->files, $key, $default );
 	}
 
+	/**
+	 * Perform some validation
+	 * @return boolean
+	 */
 	public function validate()
 	{
 		$this->val = Validator::make( $this->getInput(), $this->getRules() );
@@ -114,6 +146,9 @@ class Repository {
 		return $this->val->passes();
 	}
 
+	/**
+	 * Do something with all that freshly validated data
+	 */
 	protected function fill()
 	{
 		$this->model->fill( $this->data() );
@@ -121,13 +156,23 @@ class Repository {
 		return $this;
 	}
 
+	/**
+	 * Save the models to the database
+	 */
 	protected function save()
 	{
 		$this->model->save();
+
+		return $this;
 	}
 
+	/**
+	 * Get the validation errors
+	 * @return array|MessageBag
+	 */
 	public function getErrors()
 	{
 		return $this->val->getMessageBag();
 	}
+
 }
