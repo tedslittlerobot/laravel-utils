@@ -1,7 +1,7 @@
 <?php namespace Tlr\Support;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 
 class Repository {
 
