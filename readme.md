@@ -15,7 +15,7 @@ composer require tlr/laravel-utils "dev-master"
 
 ###### Illuminate Components
 
-- [The Route Binding Mod](docs/illuminate/route.md)
+- [The Route Binding Mod (for pre-4.1)](docs/illuminate/route.md)
 - [HtmlBuilder](docs/illuminate/html.md)
 
 ###### Support Classes
