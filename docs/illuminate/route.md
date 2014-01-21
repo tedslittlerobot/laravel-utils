@@ -1,7 +1,7 @@
 Route Binding
 =============
 
-This is my implementation of [this issue](https://github.com/laravel/framework/issues/2531)
+This is my implementation of [this issue](https://github.com/laravel/framework/issues/2531). As noted after the issue was closed, this was implemented in Laravel 4.1.
 
 When performing route bindings, I find often find myself wanting to use previously bound properties. For example, if had `{category}/{post}`, i wouldn't want to perform a query to get the category model twice, because a) it's an unneccessary database call, and b) it's [WET](http://en.wikipedia.org/wiki/Don't_repeat_yourself).
 
